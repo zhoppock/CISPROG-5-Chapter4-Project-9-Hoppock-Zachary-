@@ -1,0 +1,24 @@
+  1> import os
+  2> 
+  3> def numberlines():
+  4>   fileName = input("What is the input file called? ")
+  5>   fileCopy = input("What is the copy file called? ")
+  6> 
+  7>   f = open(fileName, 'r')
+  8>   c = open(fileCopy, 'w')
+  9> 
+ 10>   if os.path.exists(fileCopy):
+ 11>     print("\n" + fileCopy + ": File exists.")
+ 12>   else:
+ 13>     print("\nFilename", fileCopy, "has been created.")
+ 14> 
+ 15>   number = 0
+ 16>   for line in f:
+ 17>     number += 1
+ 18>     c.write("%4s %s" % (str(number) + ">", line))
+ 19>   f.close()
+ 20>   c.close()
+ 21> 
+ 22>   print("Contents of", fileName, "have been copied to", fileCopy, "and organized.")
+ 23> 
+ 24>   
